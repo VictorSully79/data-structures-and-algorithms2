@@ -25,9 +25,19 @@ public class LinkedListTest {
         filledList.insert("six");
         filledList.insert("eight");
         filledList.insert("Who do we appreciate?");
-        boolean equalsNode = filledList.includes("four");
+        boolean equalsNode = filledList.includes("six");
         assertTrue(equalsNode);
 
+
+    }
+    @Test public void thirdTest (){
+        LinkedList insertLast = new LinkedList();
+
+        insertLast.insert("four");
+        insertLast.insert("five");
+        insertLast.insert("six");
+        insertLast.append("one");
+        insertLast.display();
 
     }
 }
