@@ -1,6 +1,7 @@
 package challenges.linkedList;
 import java.util.*;
 
+
 public class LinkedList {
     public Node head = null;
     public Node tail = null;
@@ -42,16 +43,41 @@ public class LinkedList {
         return false;
     }
 
-    public void append(String value) {
+    public void append(String data) {
         Node currentNode = this.head;
         while (currentNode != null) {
             if (currentNode.next == null) {
-                Node newNode = new Node(value);
+                Node newNode = new Node(data);
                 newNode.next = null;
                 currentNode.next = newNode;
                 return;
             }
             currentNode = currentNode.next;
+        }
+    }
+
+    public void insertBefore(String data, String newData){
+        Node newNode = new Node(newData);
+        Node current = this.head;
+        boolean isHeadOrTail = this.tail.data.equals(data) || current.data.equals(data);
+        if(!isHeadOrTail){
+            while(current.next != null){
+                if(current.next.data.equals(data)){
+                    newNode.next = current.next;
+                    current.next = newNode;
+                    return;
+                }
+                current = current.next;
+            }
+        }
+        else{
+            if(this.tail.value.equals(data)) {
+                newNode.next = this.tail;
+                this.tail.prev.next = newNode;
+            }
+            else {
+                this.insert(newData);
+            }
         }
     }
 }
