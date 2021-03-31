@@ -95,7 +95,7 @@ public class LinkedList {
                     current.next = newNode;
                     newNode.next = temp;
                 }
-                current = current.next;
+                current = current.next;  
             }
         }
 
