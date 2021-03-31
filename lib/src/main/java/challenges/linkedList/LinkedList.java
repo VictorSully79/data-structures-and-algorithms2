@@ -59,6 +59,7 @@ public class LinkedList {
     public void insertBefore(String data, String newData){
         Node newNode = new Node(newData);
         Node current = this.head;
+        System.out.println(current);
         boolean isHeadOrTail = this.tail.data.equals(data) || current.data.equals(data);
         if(!isHeadOrTail){
             while(current.next != null){
@@ -79,6 +80,25 @@ public class LinkedList {
                 this.insert(newData);
             }
         }
+    }
+    public void insertAfter(String data, String newData){
+        Node newNode = new Node(newData);
+        boolean isTail =this.tail.data.equals(data);
+        if(isTail){
+            append(newData);
+        }
+        else{
+            Node current = this.head;
+            while(current.next != null){
+                if(current.data.equals(data)){
+                    Node temp = current.next;
+                    current.next = newNode;
+                    newNode.next = temp;
+                }
+                current = current.next;
+            }
+        }
+
     }
 }
 
