@@ -31,3 +31,4 @@
 - Can successfully insert a node before the first node of a linked list
 - Can successfully insert after a node in the middle of the linked list
 - Can successfully insert a node after the last node of the linked list
+[Challenge 6 WB](./assets/Chall6.png)
