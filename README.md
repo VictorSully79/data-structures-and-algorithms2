@@ -17,8 +17,8 @@
 ## insert() allows for the insertion of new nodes
 ## display() displays the print out of the Node.
 ## includes() allows the search of the Node for specific data.
-#Code Challenge 6 
+# Code Challenge 6 
 ## Feature Task 
-### - .append(value) which adds a new node with the given value to the end of the list
+- .append(value) which adds a new node with the given value to the end of the list
 - .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
 - .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
