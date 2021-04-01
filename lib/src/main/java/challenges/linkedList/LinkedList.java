@@ -3,8 +3,6 @@ package challenges.linkedList;
 import java.util.*;
 
 
-
-
 public class LinkedList {
     public Node head = null;
     public Node tail = null;
@@ -106,18 +104,34 @@ public class LinkedList {
         Node currentNode1 = firstList.head;
         Node currentNode2 = secondList.head;
         LinkedList newLinkedList = new LinkedList();
-        //check lists for null
+        while (currentNode1 != null || currentNode2 != null) {
+            if (newLinkedList.head == null) {
+                if (currentNode1 != null) {
+                    newLinkedList.insert(currentNode1.value);
+                    currentNode1 = currentNode1.next;
+                } else {
+                    newLinkedList.insert(currentNode2.value);
+                    currentNode2 = currentNode2.next;
+                }
+                if (currentNode1 != null) {
+                    newLinkedList.append(currentNode1.value);
+                    currentNode1 = currentNode1.next;
+                }
+                if (currentNode2 != null) {
+                    newLinkedList.append(currentNode2.value);
+                    currentNode2 = currentNode2.next;
+                }
 
-        if (firstList.head == null) return secondList;
-        if (secondList.head == null) return firstList;
+            }
 
-        Node newNode =
-
-
+            
 
         }
+        return newLinkedList;
+    }
+}
 
-        }
+
 
 
 
