@@ -33,3 +33,6 @@
 - Can successfully insert a node after the last node of the linked list
 - 
 ![Challenge 6 WB](./assets/Chall6.png)
+
+# Challenge 08
+![Challenge 08](./assets/Lab8WB.png)
