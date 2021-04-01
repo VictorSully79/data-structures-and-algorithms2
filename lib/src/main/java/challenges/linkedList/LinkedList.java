@@ -1,4 +1,5 @@
 package challenges.linkedList;
+
 import java.util.*;
 
 
@@ -56,51 +57,84 @@ public class LinkedList {
         }
     }
 
-    public void insertBefore(String data, String newData){
+    public void insertBefore(String data, String newData) {
         Node newNode = new Node(newData);
         Node current = this.head;
         System.out.println(current);
         boolean isHeadOrTail = this.tail.data.equals(data) || current.data.equals(data);
-        if(!isHeadOrTail){
-            while(current.next != null){
-                if(current.next.data.equals(data)){
+        if (!isHeadOrTail) {
+            while (current.next != null) {
+                if (current.next.data.equals(data)) {
                     newNode.next = current.next;
                     current.next = newNode;
                     return;
                 }
                 current = current.next;
             }
-        }
-        else{
-            if(this.tail.value.equals(data)) {
+        } else {
+            if (this.tail.value.equals(data)) {
                 newNode.next = this.tail;
                 this.tail.prev.next = newNode;
-            }
-            else {
+            } else {
                 this.insert(newData);
             }
         }
     }
-    public void insertAfter(String data, String newData){
+
+    public void insertAfter(String data, String newData) {
         Node newNode = new Node(newData);
-        boolean isTail =this.tail.data.equals(data);
-        if(isTail){
+        boolean isTail = this.tail.data.equals(data);
+        if (isTail) {
             append(newData);
-        }
-        else{
+        } else {
             Node current = this.head;
-            while(current.next != null){
-                if(current.data.equals(data)){
+            while (current.next != null) {
+                if (current.data.equals(data)) {
                     Node temp = current.next;
                     current.next = newNode;
                     newNode.next = temp;
                 }
-                current = current.next;  
+                current = current.next;
             }
         }
+    }
 
+    public static LinkedList zipLists(LinkedList firstList, LinkedList secondList) {
+
+        Node currentNode1 = firstList.head;
+        Node currentNode2 = secondList.head;
+        LinkedList newLinkedList = new LinkedList();
+        while (currentNode1 != null || currentNode2 != null) {
+            if (newLinkedList.head == null) {
+                if (currentNode1 != null) {
+                    newLinkedList.insert(currentNode1.value);
+                    currentNode1 = currentNode1.next;
+                } else {
+                    newLinkedList.insert(currentNode2.value);
+                    currentNode2 = currentNode2.next;
+                }
+                if (currentNode1 != null) {
+                    newLinkedList.append(currentNode1.value);
+                    currentNode1 = currentNode1.next;
+                }
+                if (currentNode2 != null) {
+                    newLinkedList.append(currentNode2.value);
+                    currentNode2 = currentNode2.next;
+                }
+
+            }
+
+            
+
+        }
+        return newLinkedList;
     }
 }
+
+
+
+
+
 
 
 
