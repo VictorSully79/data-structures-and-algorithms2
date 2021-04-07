@@ -36,3 +36,16 @@
 
 # Challenge 08
 ![Challenge 08](./assets/Lab8WB.png)
+
+# Code Challenge 12
+## Start Time 2040
+## End Time 2240
+### Feature Task
+- Create a class called AnimalShelter which holds only dogs and cats. The shelter operates using a first-in, first-out approach.
+  Implement the following methods:
+- enqueue(animal): adds animal to the shelter. animal can be either a dog or a cat object.
+- dequeue(pref): returns either a dog or a cat. If pref is not "dog" or "cat" then return null.
+
+## Challenge 12 White Board.
+### Worked with Leaundrae McKinney and Barrett Nance
+![Lab 12 WhiteBoard](./assets/lab12WB.png)
